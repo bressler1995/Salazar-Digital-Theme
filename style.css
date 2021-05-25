@@ -1,0 +1,68 @@
+/* 
+Theme Name: Hello Elementor Child
+Theme URI: https://github.com/elementor/hello-theme/
+Description: Hello Elementor Child is a child theme of Hello Elementor, created by Elementor team
+Author: Elementor Team
+Author URI: https://elementor.com/
+Template: hello-elementor
+Version: 1.0.1
+Text Domain: hello-elementor-child
+License: GNU General Public License v3 or later.
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, rtl-language-support, threaded-comments, translation-ready
+*/
+
+/*
+    Add your custom styles here
+*/
+
+.sdigital_nav_button.stick {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+}
+
+.sdigital_nav_button.stick.showme {
+    transition-delay: 1s;
+    -webkit-transition: all 0.3s ease !important;
+    -moz-transition: all 0.3s ease !important;
+    -ms-transition: all 0.3s ease !important;
+    -o-transition: all 0.3s ease !important;
+    transition: all 0.3s ease !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.sdigital_nav_button {
+    -webkit-transition: background 0.3s ease !important;
+    -moz-transition: background 0.3s ease !important;
+    -ms-transition: background 0.3s ease !important;
+    -o-transition: background 0.3s ease !important;
+    transition: background 0.3s ease !important;
+}
+
+body,html {
+	overflow-x: hidden;
+}
+
+.grecaptcha-badge {
+	visibility: hidden;
+}
+
+.eccent_header {
+	position: absolute;
+	width: 100%;
+}
+
+/* body .uwy.userway_p1 .uai.move {
+    transform: scale(1) translateY(-65px) !important;
+}
+
+body .uwy.userway_p1 .uai {
+    top:initial !important;
+    bottom: 35px !important;
+    right: 35px !important;
+} */
