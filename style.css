@@ -18,8 +18,8 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
 
 .sdigital_nav_button.stick {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 65px;
+    right: 8px;
     opacity: 0;
     visibility: hidden;
     z-index: 100;
@@ -66,3 +66,36 @@ body .uwy.userway_p1 .uai {
     bottom: 35px !important;
     right: 35px !important;
 } */
+
+.eccent_desktop_menu {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    list-style-type: none;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.eccent_desktop_menu li a {
+    font-size: 24px;
+    line-height: 28px;
+    color:#222;
+    font-weight: 600;
+    font-size: "Poppins", Sans-serif;
+}
+
+.eccent_desktop_menu li .sub-menu {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    list-style-type: none;
+    flex-flow: column wrap;
+}
+
+.eccent_desktop_menu .sub-menu li a {
+    font-size: 14px !important;
+    line-height: 18px !important;
+    font-weight: 400 !important;
+    font-size: "Open Sans", Sans-serif !important;
+}
+
