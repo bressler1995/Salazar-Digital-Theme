@@ -40,6 +40,7 @@ if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_
 
 		</div>
 	</div>
+	<button id="sdigital_menu_close" class="sdigital_menu_close"><img src="<?php echo get_stylesheet_directory_uri() . '/assets/svg/cancel.svg' ?>"></button>
 </div>
 
 </body>

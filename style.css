@@ -94,28 +94,29 @@ body .uwy.userway_p1 .uai {
 } */
 
 .sdigital_menuholder {
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -ms-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+    transition: all 0.7s ease;
     display: block;
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.97);
     overflow: hidden;
-    top:50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top:0;
+    left: 0;
     z-index: 999;
     visibility: hidden;
     opacity: 0;
+    transform: translateX(50%);
 }
 
 .sdigital_menuholder.show {
     visibility: visible !important;
     opacity: 1 !important;
+    transform: translateX(0%) !important;
 }
 
 .sdigital_container {
@@ -156,8 +157,8 @@ body .uwy.userway_p1 .uai {
     font-weight: 400 !important;
     font-family: "Open Sans", Sans-serif !important;
     text-transform: capitalize !important;
-    padding-top: 9px !important;
-    padding-bottom: 9px !important;
+    padding-top: 11px !important;
+    padding-bottom: 11px !important;
     box-sizing: border-box;
     width: 100%;
     color: #FFF;
@@ -186,8 +187,8 @@ body .uwy.userway_p1 .uai {
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
     display: block;
     width: 100%;
     box-sizing: border-box;
@@ -203,6 +204,68 @@ body .uwy.userway_p1 .uai {
     height: 0;
 }
 
+.eccent_desktop_menu li.menu-item-has-children a {
+    position: relative;
+}
+
+.eccent_desktop_menu li.menu-item-has-children a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('assets/img/down.png');
+}
+
+.eccent_desktop_menu li.menu-item-has-children .sub-menu a:after {
+    display: none !important;
+}
+
+.sdigital_container_column {
+    display: flex;
+    flex-flow: column wrap;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.sdigital_menu_close {
+    display: block;
+    position: fixed;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    z-index: 1001;
+    background-color: transparent;
+    border: 1px solid #128214;
+    right: 15px;
+    top: 15px;
+}
+
+.sdigital_menu_close:hover, .sdigital_menu_close:active, .sdigital_menu_close:focus {
+    background-color: #128214;
+    outline: none !important;
+}
+
+.sdigital_menu_close:hover img, .sdigital_menu_close:active img, .sdigital_menu_close:focus img {
+    filter: invert(98%) sepia(100%) saturate(0%) hue-rotate(12deg) brightness(100%) contrast(102%) !important;
+}
+
+.sdigital_menu_close img {
+    display: block;
+    position: absolute;
+    width:15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: invert(30%) sepia(95%) saturate(906%) hue-rotate(85deg) brightness(96%) contrast(91%);
+}
+
 @media (max-width: 767.9px) {
 
     .sdigital_container {
@@ -214,8 +277,16 @@ body .uwy.userway_p1 .uai {
     .eccent_desktop_menu li a {
         font-size: 32px;
         line-height: 36px;
-        padding-top: 7px;
-        padding-bottom: 7px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    .sdigital_container .sdigital_container_column:first-of-type {
+        width:100%;
+    }
+
+    .sdigital_container .sdigital_container_column:last-of-type {
+        width:100%;
     }
 }
 
@@ -229,8 +300,16 @@ body .uwy.userway_p1 .uai {
     .eccent_desktop_menu li a {
         font-size: 38px;
         line-height: 42px;
-        padding-top: 12px;
-        padding-bottom: 12px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+
+    .sdigital_container .sdigital_container_column:first-of-type {
+        width:50%;
+    }
+
+    .sdigital_container .sdigital_container_column:last-of-type {
+        width:50%;
     }
 }
 
@@ -242,9 +321,17 @@ body .uwy.userway_p1 .uai {
     }
 
     .eccent_desktop_menu li a {
-        font-size: 42px;
-        line-height: 44px;
-        padding-top: 14px;
-        padding-bottom: 14px;
+        font-size: 48px;
+        line-height: 52px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .sdigital_container .sdigital_container_column:first-of-type {
+        width:50%;
+    }
+
+    .sdigital_container .sdigital_container_column:last-of-type {
+        width:50%;
     }
 }

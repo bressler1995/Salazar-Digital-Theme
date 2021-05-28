@@ -8,6 +8,7 @@ jQuery( document ).ready(function() {
     let eccent_desktop_menu = document.getElementById("eccent_desktop_menu");
     let sdigital_nav_button = document.getElementById("sdigital_nav_button");
     let sdigital_menuholder = document.getElementById("sdigital_menuholder");
+    let sdigital_menu_close = document.getElementById("sdigital_menu_close");
 
     function callmybubble() {
         let sdigital_nav_button = document.getElementById("sdigital_nav_button");
@@ -45,7 +46,11 @@ jQuery( document ).ready(function() {
         sdigital_nav_button.addEventListener("click", function(){
             if(sdigital_menuholder.classList.contains("show") == false) {
                 sdigital_menuholder.classList.add("show");
-            } else if(sdigital_menuholder.classList.contains("show") == true) {
+            }
+        });
+
+        sdigital_menu_close.addEventListener("click", function(){
+            if(sdigital_menuholder.classList.contains("show") == true) {
                 sdigital_menuholder.classList.remove("show");
             }
         });
@@ -59,7 +64,7 @@ jQuery( document ).ready(function() {
 
                     if(thesubmenu.length >= 1) {
                         let the_submenu_li = thesubmenu[0].getElementsByTagName("li");
-                        let the_submenu_height = the_submenu_li.length * 40;
+                        let the_submenu_height = the_submenu_li.length * 42;
 
                         console.log("Height Target: " + the_submenu_height);
                         console.log("Current Height: " + thesubmenu[0].clientHeight);
