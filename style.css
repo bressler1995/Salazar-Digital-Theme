@@ -16,10 +16,49 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
     Add your custom styles here
 */
 
+body,html {
+	overflow-x: hidden;
+}
+
+.grecaptcha-badge {
+	visibility: hidden;
+}
+
+.eccent_header {
+	position: absolute;
+	width: 100%;
+}
+
+.sdigital_nav_button {
+    display: block;
+    position: relative;
+    background-color: #FBE90E;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    border: none;
+}
+
+.sdigital_nav_button:hover, .sdigital_nav_button:active, .sdigital_nav_button:focus {
+    background-color: #d1c10a !important;
+    outline: none !important;
+}
+
+.sdigital_nav_button img {
+    display: block;
+    position: absolute;
+    width:23px;
+    height: 23px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: invert(30%) sepia(95%) saturate(906%) hue-rotate(85deg) brightness(96%) contrast(91%);
+}
+
 .sdigital_nav_button.stick {
-    position: fixed;
+    position: fixed !important;
     bottom: 65px;
-    right: 8px;
+    right: 10px;
     opacity: 0;
     visibility: hidden;
     z-index: 100;
@@ -44,19 +83,6 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
     transition: background 0.3s ease !important;
 }
 
-body,html {
-	overflow-x: hidden;
-}
-
-.grecaptcha-badge {
-	visibility: hidden;
-}
-
-.eccent_header {
-	position: absolute;
-	width: 100%;
-}
-
 /* body .uwy.userway_p1 .uai.move {
     transform: scale(1) translateY(-65px) !important;
 }
@@ -67,6 +93,52 @@ body .uwy.userway_p1 .uai {
     right: 35px !important;
 } */
 
+.sdigital_menuholder {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    overflow: hidden;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.sdigital_menuholder.show {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.sdigital_container {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sdigital_menuholder h3 {
+    color: #128214;
+    font-size: 28px;
+    line-height: 32px;
+    margin-top: 0 !important;
+    margin-bottom: 30px !important;
+    font-weight: 600;
+
+}
+
 .eccent_desktop_menu {
     display: flex;
     width: 100%;
@@ -74,28 +146,105 @@ body .uwy.userway_p1 .uai {
     list-style-type: none;
     display: flex;
     flex-flow: column wrap;
-}
-
-.eccent_desktop_menu li a {
-    font-size: 24px;
-    line-height: 28px;
-    color:#222;
-    font-weight: 600;
-    font-size: "Poppins", Sans-serif;
-}
-
-.eccent_desktop_menu li .sub-menu {
-    display: flex;
-    width: 100%;
-    box-sizing: border-box;
-    list-style-type: none;
-    flex-flow: column wrap;
+    padding:0;
 }
 
 .eccent_desktop_menu .sub-menu li a {
-    font-size: 14px !important;
-    line-height: 18px !important;
+    display: block;
+    font-size: 16px !important;
+    line-height: 20px !important;
     font-weight: 400 !important;
-    font-size: "Open Sans", Sans-serif !important;
+    font-family: "Open Sans", Sans-serif !important;
+    text-transform: capitalize !important;
+    padding-top: 9px !important;
+    padding-bottom: 9px !important;
+    box-sizing: border-box;
+    width: 100%;
+    color: #FFF;
 }
 
+.eccent_desktop_menu .sub-menu li a:hover, .eccent_desktop_menu .sub-menu li a:active, .eccent_desktop_menu .sub-menu li a:focus {
+    color: #FBE90E;
+}
+
+.eccent_desktop_menu li a {
+    display: block;
+    position: relative;
+    color:#333;
+    font-weight: 500;
+    font-family: "Poppins", Sans-serif;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.eccent_desktop_menu li a:hover, .eccent_desktop_menu li a:active, .eccent_desktop_menu li a:focus {
+    color: #128214;
+}
+
+.eccent_desktop_menu li .sub-menu {
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    list-style-type: none;
+    padding:0;
+    list-style-type: none;
+    background-color: #1C8E1E;
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow: hidden;
+    border-radius: 5px;
+    opacity: 0;
+    height: 0;
+}
+
+@media (max-width: 767.9px) {
+
+    .sdigital_container {
+        max-width: calc(1400px + 60px);
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .eccent_desktop_menu li a {
+        font-size: 32px;
+        line-height: 36px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 1024.9px) {
+    .sdigital_container {
+        max-width: calc(1400px + 100px);
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .eccent_desktop_menu li a {
+        font-size: 38px;
+        line-height: 42px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}
+
+@media(min-width: 1025px) {
+    .sdigital_container {
+        max-width: calc(1400px + 140px);
+        padding-left: 70px;
+        padding-right: 70px;
+    }
+
+    .eccent_desktop_menu li a {
+        font-size: 42px;
+        line-height: 44px;
+        padding-top: 14px;
+        padding-bottom: 14px;
+    }
+}

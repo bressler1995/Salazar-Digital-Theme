@@ -1,18 +1,11 @@
 <?php
 
-    function sdigital_custom_menu() {
-        $menu_items = '';
-        
-        if ( has_nav_menu('menu-1')) {
-            $menu_items = wp_nav_menu(array( 'theme_location' => 'menu-1',
-							'menu_class' => 'eccent_desktop_menu',
-							'menu_id' => 'eccent_desktop_menu'
-			)); 
-        }
+    function sdigital_thebubble() {
+        $result = '<button id="sdigital_nav_button" class="sdigital_nav_button" type="button"><img src="' . get_stylesheet_directory_uri() . '/assets/svg/menu.svg"></button>';
 
-        return $menu_items;
+        return $result;
             
     }
 
-    add_shortcode('showthemenu', 'sdigital_custom_menu');
+    add_shortcode('showthebubble', 'sdigital_thebubble');
 ?>

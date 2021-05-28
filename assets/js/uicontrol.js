@@ -5,10 +5,12 @@ jQuery( document ).ready(function() {
         callmybubble();
     }
 
+    let eccent_desktop_menu = document.getElementById("eccent_desktop_menu");
+    let sdigital_nav_button = document.getElementById("sdigital_nav_button");
+    let sdigital_menuholder = document.getElementById("sdigital_menuholder");
+
     function callmybubble() {
         let sdigital_nav_button = document.getElementById("sdigital_nav_button");
-        let userwayAccessibilityIcon = document.getElementById("userwayAccessibilityIcon");
-
 
         console.log(window.pageYOffset);
         if(window.pageYOffset >= window.innerHeight / 4) {
@@ -21,9 +23,6 @@ jQuery( document ).ready(function() {
                             sdigital_nav_button.classList.add("showme");
                         }
 
-                        if(userwayAccessibilityIcon.classList.contains("move") == false) {
-                            userwayAccessibilityIcon.classList.add("move");
-                        }
                 }, 300);
             }
         } else {
@@ -35,13 +34,63 @@ jQuery( document ).ready(function() {
                     sdigital_nav_button.classList.remove("showme");
                 }
 
-                if(userwayAccessibilityIcon.classList.contains("move") == true) {
-                    userwayAccessibilityIcon.classList.remove("move");
-                }
             }
         }
 
     }
 
     callmybubble();
+
+    function inject_menus() {
+        sdigital_nav_button.addEventListener("click", function(){
+            if(sdigital_menuholder.classList.contains("show") == false) {
+                sdigital_menuholder.classList.add("show");
+            } else if(sdigital_menuholder.classList.contains("show") == true) {
+                sdigital_menuholder.classList.remove("show");
+            }
+        });
+
+        if(eccent_desktop_menu != null) {
+            let eccent_desktop_menu_parent = eccent_desktop_menu.getElementsByClassName("menu-item-has-children");
+
+            for(i = 0; i < eccent_desktop_menu_parent.length; i++) {
+                eccent_desktop_menu_parent[i].addEventListener("mouseover", function(){
+                    let thesubmenu = this.getElementsByClassName("sub-menu");
+
+                    if(thesubmenu.length >= 1) {
+                        let the_submenu_li = thesubmenu[0].getElementsByTagName("li");
+                        let the_submenu_height = the_submenu_li.length * 40;
+
+                        console.log("Height Target: " + the_submenu_height);
+                        console.log("Current Height: " + thesubmenu[0].clientHeight);
+
+                        if(thesubmenu[0].clientHeight == 0) {
+                            thesubmenu[0].style.height = the_submenu_height + "px";
+                            thesubmenu[0].style.opacity = "1";
+                        }
+                    }
+                });
+            }
+
+            for(z = 0; z < eccent_desktop_menu_parent.length; z++) {
+                eccent_desktop_menu_parent[z].addEventListener("mouseleave", function(){
+                    let thesubmenu = this.getElementsByClassName("sub-menu");
+
+                    if(thesubmenu.length >= 1) {
+                        let the_submenu_li = thesubmenu[0].getElementsByTagName("li");
+
+                        if(thesubmenu[0].clientHeight > 0) {
+                            thesubmenu[0].style.height = "0px";
+                            thesubmenu[0].style.opacity = "0";
+                        }
+                    }
+                });
+            }
+        }
+    }
+
+    if(sdigital_menuholder != null && sdigital_nav_button != null) {
+        inject_menus();
+    }
+    
 });
