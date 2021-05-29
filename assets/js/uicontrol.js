@@ -43,16 +43,14 @@ jQuery( document ).ready(function() {
     callmybubble();
 
     function inject_menus() {
+        let sdigital_general_a = eccent_desktop_menu.getElementsByTagName("a");
+
         sdigital_nav_button.addEventListener("click", function(){
-            if(sdigital_menuholder.classList.contains("show") == false) {
-                sdigital_menuholder.classList.add("show");
-            }
+            show_the_menu();
         });
 
         sdigital_menu_close.addEventListener("click", function(){
-            if(sdigital_menuholder.classList.contains("show") == true) {
-                sdigital_menuholder.classList.remove("show");
-            }
+            close_the_menu();
         });
 
         if(eccent_desktop_menu != null) {
@@ -60,42 +58,72 @@ jQuery( document ).ready(function() {
 
             for(i = 0; i < eccent_desktop_menu_parent.length; i++) {
                 eccent_desktop_menu_parent[i].addEventListener("mouseover", function(){
-                    let thesubmenu = this.getElementsByClassName("sub-menu");
+                    if (window.matchMedia('(min-width: 1025px)').matches) {
+                        let thesubmenu = this.getElementsByClassName("sub-menu");
 
-                    if(thesubmenu.length >= 1) {
-                        let the_submenu_li = thesubmenu[0].getElementsByTagName("li");
-                        let the_submenu_height = the_submenu_li.length * 42;
+                        if(thesubmenu.length >= 1) {
+                            let the_submenu_li = thesubmenu[0].getElementsByTagName("li");
+                            let the_submenu_height = the_submenu_li.length * 42;
 
-                        console.log("Height Target: " + the_submenu_height);
-                        console.log("Current Height: " + thesubmenu[0].clientHeight);
+                            console.log("Height Target: " + the_submenu_height);
+                            console.log("Current Height: " + thesubmenu[0].clientHeight);
 
-                        if(thesubmenu[0].clientHeight == 0) {
-                            thesubmenu[0].style.height = the_submenu_height + "px";
-                            thesubmenu[0].style.opacity = "1";
+                            if(thesubmenu[0].clientHeight == 0) {
+                                thesubmenu[0].style.height = the_submenu_height + "px";
+                                thesubmenu[0].style.opacity = "1";
+                            }
                         }
                     }
+                    
                 });
             }
 
             for(z = 0; z < eccent_desktop_menu_parent.length; z++) {
                 eccent_desktop_menu_parent[z].addEventListener("mouseleave", function(){
-                    let thesubmenu = this.getElementsByClassName("sub-menu");
+                    if (window.matchMedia('(min-width: 1025px)').matches) {
+                        let thesubmenu = this.getElementsByClassName("sub-menu");
 
-                    if(thesubmenu.length >= 1) {
-                        let the_submenu_li = thesubmenu[0].getElementsByTagName("li");
+                        if(thesubmenu.length >= 1) {
+                            let the_submenu_li = thesubmenu[0].getElementsByTagName("li");
 
-                        if(thesubmenu[0].clientHeight > 0) {
-                            thesubmenu[0].style.height = "0px";
-                            thesubmenu[0].style.opacity = "0";
+                            if(thesubmenu[0].clientHeight > 0) {
+                                thesubmenu[0].style.height = "0px";
+                                thesubmenu[0].style.opacity = "0";
+                            }
                         }
                     }
                 });
             }
+
+            for(y = 0; y < sdigital_general_a.length; y++) {
+                sdigital_general_a[y].addEventListener("click", function() {
+                    if (window.matchMedia('(min-width: 1025px)').matches) {
+                        console.log('Large viewport');
+                        close_the_menu();
+                    } else {
+                        console.log('Small viewport');
+                    }
+                });
+            }
         }
+
+        
     }
 
     if(sdigital_menuholder != null && sdigital_nav_button != null) {
         inject_menus();
+    }
+
+    function show_the_menu() {
+        if(sdigital_menuholder.classList.contains("show") == false) {
+            sdigital_menuholder.classList.add("show");
+        }
+    }
+
+    function close_the_menu() {
+        if(sdigital_menuholder.classList.contains("show") == true) {
+            sdigital_menuholder.classList.remove("show");
+        }
     }
     
 });

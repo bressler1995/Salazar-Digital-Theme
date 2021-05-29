@@ -37,7 +37,35 @@ if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_
 			?>
 		</div>
 		<div class="sdigital_container_column">
-
+				<div class="sdigital_menu_contactinfo">
+					<div class="sdigital_menu_contactinfo_item">
+						<div class="thetitle">
+							<span><img src="<?php echo get_stylesheet_directory_uri() . '/assets/svg/map.svg' ?>"></span>
+							<h4>Our Location</h4>
+						</div>
+						<div class="theinfo">
+							<p>1172 Murphy Avenue, Suite #208 San Jose, CA</p>
+						</div>
+					</div>
+					<div class="sdigital_menu_contactinfo_item">
+						<div class="thetitle">
+							<span><img src="<?php echo get_stylesheet_directory_uri() . '/assets/svg/phone-call.svg' ?>"></span>
+							<h4>Call Us</h4>
+						</div>
+						<div class="theinfo">
+							<p><a href="tel:4087086461">(408) 708-6461</a></p>
+						</div>
+					</div>
+					<div class="sdigital_menu_contactinfo_item">
+						<div class="thetitle">
+							<span><img src="<?php echo get_stylesheet_directory_uri() . '/assets/svg/email.svg' ?>"></span>
+							<h4>Email Us</h4>
+						</div>
+						<div class="theinfo">
+							<p><a href="mailto:hello@salazardigital.net">hello@salazardigital.net</a></p>
+						</div>
+					</div>
+				</div>
 		</div>
 	</div>
 	<button id="sdigital_menu_close" class="sdigital_menu_close"><img src="<?php echo get_stylesheet_directory_uri() . '/assets/svg/cancel.svg' ?>"></button>
