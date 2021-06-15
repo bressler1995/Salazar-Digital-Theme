@@ -109,7 +109,7 @@ body .uwy.userway_p1 .uai {
     left: 0;
     z-index: 999;
     visibility: hidden;
-    opacity: 0;
+    opacity: 0 !important;
     transform: translateX(50%);
 }
 
