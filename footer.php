@@ -37,6 +37,25 @@ if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_
 			?>
 		</div>
 		<div class="sdigital_container_column">
+			<?php 
+			
+				$sdigital_phone = get_theme_mod('sdigital_setting_phone', '(000) 000-0000');
+				$sdigital_address = get_theme_mod('sdigital_setting_address', '1172 Murphy Avenue, Suite #208 San Jose, CA');
+				$sdigital_email = get_theme_mod('sdigital_setting_email', 'hello@salazardigital.net');
+
+				if($sdigital_phone == '' || empty($sdigital_phone) == true) {
+					$sdigital_phone = '(000) 000-0000';
+				}
+
+				if($sdigital_address == '' || empty($sdigital_address) == true) {
+					$sdigital_address = '1172 Murphy Avenue, Suite #208 San Jose, CA';
+				}
+
+				if($sdigital_email == '' || empty($sdigital_email) == true) {
+					$sdigital_email = 'hello@salazardigital.net';
+				}
+			
+			?>
 				<div class="sdigital_menu_contactinfo">
 					<div class="sdigital_menu_contactinfo_item">
 						<div class="thetitle">
@@ -44,7 +63,7 @@ if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_
 							<h4>Our Location</h4>
 						</div>
 						<div class="theinfo">
-							<p>1172 Murphy Avenue, Suite #208 San Jose, CA</p>
+							<p><?php echo $sdigital_address?></p>
 						</div>
 					</div>
 					<div class="sdigital_menu_contactinfo_item">
@@ -53,7 +72,9 @@ if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_
 							<h4>Call Us</h4>
 						</div>
 						<div class="theinfo">
-							<p><a href="tel:4087086461">(408) 708-6461</a></p>
+							<p><a href="<?php echo 'tel:' . $sdigital_phone ?>">
+								<?php echo $sdigital_phone ?>
+							</a></p>
 						</div>
 					</div>
 					<div class="sdigital_menu_contactinfo_item">
@@ -62,7 +83,9 @@ if ( ! function_exists( 'elementor_theme_do_location' ) || ! elementor_theme_do_
 							<h4>Email Us</h4>
 						</div>
 						<div class="theinfo">
-							<p><a href="mailto:hello@salazardigital.net">hello@salazardigital.net</a></p>
+							<p><a href="<?php echo 'mailto:' . $sdigital_email ?>">
+							<?php echo $sdigital_email ?>
+							</a></p>
 						</div>
 					</div>
 				</div>
