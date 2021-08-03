@@ -59,8 +59,9 @@ jQuery( document ).ready(function() {
 
             for(i = 0; i < eccent_desktop_menu_parent.length; i++) {
                 eccent_desktop_menu_parent[i].addEventListener("click", function(event){
-                    event.preventDefault();
+
                     if (window.matchMedia('(max-width: 1024px)').matches) {
+                        event.preventDefault();
                         let thesubmenu = this.getElementsByClassName("sub-menu");
 
                         if(thesubmenu.length >= 1) {
@@ -78,9 +79,10 @@ jQuery( document ).ready(function() {
                                 thesubmenu[0].style.opacity = "0";
                             }
                         }
+                        
+                        return false;
                     }
                     
-                    return false;
                 });
 
                 eccent_desktop_menu_parent[i].addEventListener("mouseover", function(){
