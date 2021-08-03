@@ -9,6 +9,7 @@ jQuery( document ).ready(function() {
     let sdigital_nav_button = document.getElementById("sdigital_nav_button");
     let sdigital_menuholder = document.getElementById("sdigital_menuholder");
     let sdigital_menu_close = document.getElementById("sdigital_menu_close");
+    let mobile_sub_menu = [-1, -1, -1];
 
     function callmybubble() {
         let sdigital_nav_button = document.getElementById("sdigital_nav_button");
@@ -57,6 +58,31 @@ jQuery( document ).ready(function() {
             let eccent_desktop_menu_parent = eccent_desktop_menu.getElementsByClassName("menu-item-has-children");
 
             for(i = 0; i < eccent_desktop_menu_parent.length; i++) {
+                eccent_desktop_menu_parent[i].addEventListener("click", function(event){
+                    event.preventDefault();
+                    if (window.matchMedia('(max-width: 1024px)').matches) {
+                        let thesubmenu = this.getElementsByClassName("sub-menu");
+
+                        if(thesubmenu.length >= 1) {
+                            let the_submenu_li = thesubmenu[0].getElementsByTagName("li");
+                            let the_submenu_height = the_submenu_li.length * 42;
+
+                            console.log("Height Target: " + the_submenu_height);
+                            console.log("Current Height: " + thesubmenu[0].clientHeight);
+
+                            if(thesubmenu[0].clientHeight == 0) {
+                                thesubmenu[0].style.height = the_submenu_height + "px";
+                                thesubmenu[0].style.opacity = "1";
+                            } else {
+                                thesubmenu[0].style.height = "0px";
+                                thesubmenu[0].style.opacity = "0";
+                            }
+                        }
+                    }
+                    
+                    return false;
+                });
+
                 eccent_desktop_menu_parent[i].addEventListener("mouseover", function(){
                     if (window.matchMedia('(min-width: 1025px)').matches) {
                         let thesubmenu = this.getElementsByClassName("sub-menu");

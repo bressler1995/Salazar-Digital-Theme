@@ -372,10 +372,14 @@ body .uwy.userway_p1 .uai {
 }
 
 @media(max-width: 1024.9px) {
+    .eccent_desktop_menu li.menu-item-has-children a {
+        pointer-events: none !important;
+    }
+
     .eccent_desktop_menu li.menu-item-has-children a:after {
         width: 15px;
         height: 15px;
-        background-image: url('assets/img/next.png');
+        /* background-image: url('assets/img/next.png'); */
     }
 }
 
@@ -385,6 +389,10 @@ body .uwy.userway_p1 .uai {
         max-width: calc(1400px + 60px);
         padding-left: 30px;
         padding-right: 30px;
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+        overflow-y: auto !important;
+        height: 100% !important;
     }
 
     .eccent_desktop_menu li a {
