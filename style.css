@@ -17,7 +17,10 @@ Tags: flexible-header, custom-colors, custom-menu, custom-logo, editor-style, fe
 */
 
 body,html {
-	/* overflow-x: hidden; */
+	overflow-x: initial;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 .grecaptcha-badge {
@@ -27,6 +30,10 @@ body,html {
 .eccent_header {
 	position: absolute;
 	width: 100%;
+}
+
+.preloader-plus {
+    overflow-x: hidden;
 }
 
 .sdigital_nav_button {
@@ -61,7 +68,7 @@ body,html {
     right: 10px;
     opacity: 0;
     visibility: hidden;
-    z-index: 100;
+    z-index: 998;
 }
 
 .sdigital_nav_button.stick.showme {
@@ -101,7 +108,7 @@ body .uwy.userway_p1 .uai {
     transition: all 0.7s ease;
     display: block;
     position: fixed;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     background-color: rgba(245, 245, 245, 0.97);
     overflow: hidden;
@@ -373,9 +380,21 @@ body .uwy.userway_p1 .uai {
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(80deg) brightness(108%) contrast(100%);
 }
 
+.seo-automation-spacer {
+    z-index: 99 !important;
+}
+
+.seo-footer-section {
+    z-index: 100 !important;
+}
+
 @media(max-width: 1024.9px) {
     .eccent_desktop_menu li.menu-item-has-children a {
-        pointer-events: none !important;
+        pointer-events: none;
+    }
+
+    ul.sub-menu li a {
+        pointer-events: initial !important;
     }
 
     .eccent_desktop_menu li.menu-item-has-children a:after {

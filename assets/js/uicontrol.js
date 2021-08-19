@@ -58,10 +58,33 @@ jQuery( document ).ready(function() {
             let eccent_desktop_menu_parent = eccent_desktop_menu.getElementsByClassName("menu-item-has-children");
 
             for(i = 0; i < eccent_desktop_menu_parent.length; i++) {
-                eccent_desktop_menu_parent[i].addEventListener("click", function(event){
+                let temp_a_collection = eccent_desktop_menu_parent[i].getElementsByTagName("a");
+
+                if(temp_a_collection != null) {
+                    if(temp_a_collection.length > 0) {
+                        for(w = 0; w < temp_a_collection.length; w++) {
+                            if(w == 0) {
+                                temp_a_collection[w].addEventListener("click", function(event) {
+                                    if (window.matchMedia('(max-width: 1024px)').matches) {
+                                        event.preventDefault();
+                                        return false;
+                                    }
+                                });
+                            } else {
+                                temp_a_collection[w].addEventListener("click", function(event) {
+                                    if (window.matchMedia('(max-width: 1024px)').matches) {
+                                        close_the_menu();
+                                    }
+                                });
+                            }
+                        }
+                    }
+                }
+
+                eccent_desktop_menu_parent[i].addEventListener("click", function(event) {
 
                     if (window.matchMedia('(max-width: 1024px)').matches) {
-                        event.preventDefault();
+                        
                         let thesubmenu = this.getElementsByClassName("sub-menu");
 
                         if(thesubmenu.length >= 1) {
@@ -80,12 +103,15 @@ jQuery( document ).ready(function() {
                             }
                         }
                         
-                        return false;
+                        
                     }
                     
                 });
 
-                eccent_desktop_menu_parent[i].addEventListener("mouseover", function(){
+            }
+
+            for(x = 0; x < eccent_desktop_menu_parent.length; x++) {
+                eccent_desktop_menu_parent[x].addEventListener("mouseover", function() {
                     if (window.matchMedia('(min-width: 1025px)').matches) {
                         let thesubmenu = this.getElementsByClassName("sub-menu");
 
