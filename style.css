@@ -310,6 +310,27 @@ body .uwy.userway_p1 .uai {
     z-index: 100 !important;
 }
 
+.sdigital_vimeocontainer {
+    display: block;
+    position: relative;
+    width: 100%;
+    background-color: #FFF;
+    padding-bottom: 49.5%;
+    height: 0;
+}
+
+.sdigital_vimeocontainer iframe {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    border: 2px solid #EEE !important;
+    border-radius: 5px;
+    outline:0;
+}
+
 @media(max-width: 1024.9px) {
     
 }
